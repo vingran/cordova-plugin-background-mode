@@ -71,12 +71,15 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="application">
-            <service android:name="de.appplant.cordova.plugin.background.ForegroundService" />
+            <service android:name="de.appplant.cordova.plugin.background.ForegroundService"
+                     android:foregroundServiceType="mediaPlayback"
+                     android:exported="false" />
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.WAKE_LOCK" />
             <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+            <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
         </config-file>
 
         <source-file
